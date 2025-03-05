@@ -79,11 +79,12 @@ nav .contact-btn:hover {
 /* Hero Section */
 .hero {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 80px 20px;
     background-color: #222;
     color: #fff;
+    margin-bottom: 70px;
 }
 
 .hero .hero-text {
@@ -93,7 +94,7 @@ nav .contact-btn:hover {
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .hero h1 span {
@@ -177,7 +178,7 @@ nav .contact-btn:hover {
     font-weight: bold;
 }
 
-.about-text .btn {
+.about-text .btn, .button-container > .btn {
     background-color: #ff7f00;
     padding: 12px 30px;
     color: #fff;
@@ -220,9 +221,10 @@ nav .contact-btn:hover {
 
 .project-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 30px;
+    margin-bottom: 60px;
 }
 
 .project {
@@ -230,13 +232,14 @@ nav .contact-btn:hover {
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    width: 280px;
+    width: 30%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .project img {
     max-width: 100%;
+    height: 70%;
     border-radius: 10px;
 }
 
@@ -255,6 +258,7 @@ nav .contact-btn:hover {
 .project:hover {
     transform: translateY(-10px);
 }
+
 /* Back to Home Button */
 .button-container {
     text-align: center;
@@ -289,7 +293,6 @@ nav .contact-btn:hover {
         transform: translateY(-10px);
     }
 }
-
 
 /* Contact Section */
 .contact {
@@ -352,6 +355,7 @@ footer {
     color: #fff;
     font-size: 1rem;
 }
+
 .back-button {
     display: inline-block;
     margin-top: 25px;
@@ -384,8 +388,109 @@ footer {
     animation: bounce 1.5s infinite; /* Added bouncing effect */
 }
 
-/* Hover Effect */
 #scrollBtn:hover {
     background: #ff9500;
     transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and below */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        /* width: 100%; */
+    }
+
+    .hero .hero-text {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+    nav ul {
+        display: none;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .about-text {
+        padding-right: 0;
+    }
+
+    .projects .project-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project {
+        width: 100%;
+    }
+}
+
+/* For mobile devices (phones) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .about h2 {
+        font-size: 2.2rem;
+    }
+
+    .projects h2 {
+        font-size: 2rem;
+    }
+
+    .project {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .contact h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact form input,
+    .contact form textarea {
+        font-size: 1rem;
+    }
+}
+
+/* For very small screens (portrait phones) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+
+    .contact form input,
+    .contact form textarea {
+        padding: 12px;
+    }
 }
